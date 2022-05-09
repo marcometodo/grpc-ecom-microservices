@@ -4,7 +4,7 @@ import (
     "os"
 
     "github.com/gin-gonic/gin"
-    product "github.com/marcometodo/grpc-micro-services/product-service/pkg"
+    product "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg"
 )
 
 func main() {
