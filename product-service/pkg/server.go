@@ -41,9 +41,7 @@ func StartgRPCServer() {
 	pb.RegisterProductServiceServer(s, &server{})
 	log.Printf("server listening at %v", lis.Addr())
 
-	go func() {
-        if err := s.Serve(lis); err != nil {
-			log.Fatalf("failed to serve: %v", err)
-		}
-    }()
+    if err := s.Serve(lis); err != nil {
+		log.Fatalf("failed to serve: %v", err)
+	}
 }

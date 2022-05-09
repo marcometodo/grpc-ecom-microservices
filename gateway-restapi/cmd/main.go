@@ -10,6 +10,10 @@ import (
 func main() {
     port := os.Getenv("HTTP_POST")
 
+    if port == "" {
+        port = ":3000"
+    }
+
     r := gin.Default()
 
     product.RegisterRoutes(r)
