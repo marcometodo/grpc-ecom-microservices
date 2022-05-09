@@ -8,7 +8,7 @@ import (
 	"fmt"
 
 	"google.golang.org/grpc"
-	"github.com/marcometodo/grpc-micro-services/product-service/pkg/pb"
+	"github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/pb"
 )
 
 var (

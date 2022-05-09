@@ -2,7 +2,7 @@ package product
 
 import (
     "github.com/gin-gonic/gin"
-    routes "github.com/marcometodo/grpc-micro-services/product-service/pkg/routes"
+    routes "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/routes"
 )
 
 func RegisterRoutes(r *gin.Engine) *ServiceClient {

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package product;
 
-option go_package = "github.com/marcometodo/grpc-micro-services/product-service/pkg/pb";
+option go_package = "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/pb";
 
 service ProductService {
   rpc Get (GetRequest) returns (ProductResponse) {}

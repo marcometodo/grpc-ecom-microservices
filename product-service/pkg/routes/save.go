@@ -5,7 +5,7 @@ import (
     "net/http"
 
     "github.com/gin-gonic/gin"
-    "github.com/marcometodo/grpc-micro-services/product-service/pkg/pb"
+    "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/pb"
 )
 
 func Save(ctx *gin.Context, c pb.ProductServiceClient) {

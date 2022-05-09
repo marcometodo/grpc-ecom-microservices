@@ -4,11 +4,11 @@ FROM golang:1.18
 ENV HTTP_PORT=50051
 EXPOSE ${HTTP_PORT}
 
-WORKDIR /go/grpc-micro-services
+WORKDIR /go/grpc-ecom-microservices
 
 COPY ./product-service ./product-service
 
-WORKDIR /go/grpc-micro-services/product-service
+WORKDIR /go/grpc-ecom-microservices/product-service
 
 RUN go build ./product-service/cmd/main.go
 
