@@ -18,4 +18,6 @@ func RegisterRoutes(r *gin.Engine) *ServiceClient {
 
 func (svc *ServiceClient) Save(ctx *gin.Context) {
     routes.Save(ctx, svc.Client)
+
+    // error handling
 }
