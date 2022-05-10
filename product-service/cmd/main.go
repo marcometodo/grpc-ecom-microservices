@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-    port := os.Getenv("HTTP_POST")
+    port := os.Getenv("HTTP_PORT")
 
     if port == "" {
         log.Fatalf("port needs to be defined")

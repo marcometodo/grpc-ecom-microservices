@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-    port := os.Getenv("HTTP_POST")
+    port := os.Getenv("HTTP_PORT")
 
     if port == "" {
-        port = ":3000"
+        log.Fatalf("port needs to be defined")
     }
 
     r := gin.Default()
