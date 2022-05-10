@@ -1,9 +1,9 @@
 package main
 
 import (
-    "fmt"
     "log"
     "net"
+    "os"
 
     "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/service"
     "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/pb"
@@ -31,7 +31,7 @@ func main() {
     
     log.Printf("server listening at %v", lis.Addr())
 
-    if err := s.Serve(lis); err != nil {
+    if err := server.Serve(lis); err != nil {
         log.Fatalf("failed to serve: %v", err)
     }
 }
