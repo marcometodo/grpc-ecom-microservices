@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-    port := os.Getenv("HTTP_PORT")
+    port := os.Getenv("GATEWAY_RESTAPI_PORT")
 
     if port == "" {
         log.Fatalf("port needs to be defined")
