@@ -10,13 +10,13 @@ import (
 
 type Server struct {
 	Handler db.Handler
+	pb.UnimplementedProductServiceServer
 }
 
-func (server *Server) Save(ctx context.Context, in *pb.SaveRequest) (*pb.ProductResponse, error) {
-	userCollection := db.GetCollection()
+func (server *Server) New(ctx context.Context, in *pb.NewRequest) (*pb.Product, error) {
+	userCollection := db.GetCollection(server.Handler.DB)
 
-	newProduct := pb.SaveRequest{
-        Id:   primitive.NewObjectID(),
+	newProduct := pb.NewRequest{
 		Name: in.GetName(),
 		Sku:  in.GetSku(),
     }
@@ -24,11 +24,11 @@ func (server *Server) Save(ctx context.Context, in *pb.SaveRequest) (*pb.Product
 	result, err := userCollection.InsertOne(ctx, newProduct)
 
 	if err != nil {
-		return &pb.ProductResponse{}, err
+		return &pb.Product{}, err
 	}
 
-	return &pb.ProductResponse{
-		Id:   "1",
+	return &pb.Product{
+		Id:   result.InsertedID.(primitive.ObjectID).Hex(),
 		Name: in.GetName(),
 		Sku:  in.GetSku(),
 	}, nil

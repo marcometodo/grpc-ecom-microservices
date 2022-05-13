@@ -3,6 +3,7 @@ package db
 import (
     "context"
     "log"
+    "os"
     "time"
 
     "go.mongodb.org/mongo-driver/mongo"
@@ -13,7 +14,7 @@ type Handler struct {
     DB *mongo.Client
 }
 
-func Connect() *mongo.Client  {
+func Connect() Handler  {
     mongoDbUri := os.Getenv("MONGO_DB_URI")
 
     if mongoDbUri == "" {

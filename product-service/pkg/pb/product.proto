@@ -5,42 +5,47 @@ package product;
 option go_package = "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/pb";
 
 service ProductService {
-  rpc Get (GetRequest) returns (ProductResponse) {}
-  rpc Save (SaveRequest) returns (ProductResponse) {}
+  rpc New (NewRequest) returns (Product) {}
+  rpc Get (GetRequest) returns (Product) {}
+  rpc Update (UpdateRequest) returns (Product) {}
   rpc Delete (DeleteRequest) returns (Empty) {}
-  rpc List (SearchCriteria) returns (SearchResult) {}
+  rpc List (ListCriteria) returns (ProductList) {}
+}
+
+message NewRequest {
+  string name = 2;
+  string sku = 3;
 }
 
 message GetRequest {
   string id = 1;
 }
 
-message ProductResponse {
+message UpdateRequest {
   string id = 1;
   string name = 2;
   string sku = 3;
 }
 
-
-message SaveRequest {
-  string name = 1;
-  string sku = 2;
-}
-
-
 message DeleteRequest {
   int32 id = 1;
 }
 
-message Empty {}
-
-message SearchCriteria {
+message ListCriteria {
   int32 page = 1;  
   int32 limit = 2;  
 }
 
-message SearchResult {
-  repeated ProductResponse products = 1;
+message Product {
+  string id = 1;
+  string name = 2;
+  string sku = 3;
+}
+
+message Empty {}
+
+message ProductList {
+  repeated Product products = 1;
   int32 total = 2;
   int32 page = 3;
   int32 limit = 4;

@@ -11,13 +11,11 @@ func RegisterRoutes(r *gin.Engine) *ServiceClient {
     }
 
     routes := r.Group("/product")
-    routes.POST("/", svc.Save)
+    routes.POST("/", svc.New)
 
     return svc
 }
 
-func (svc *ServiceClient) Save(ctx *gin.Context) {
-    routes.Save(ctx, svc.Client)
-
-    // error handling
+func (svc *ServiceClient) New(ctx *gin.Context) {
+    routes.New(ctx, svc.Client)
 }
