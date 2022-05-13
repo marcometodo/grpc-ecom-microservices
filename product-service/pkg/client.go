@@ -3,6 +3,7 @@ package product
 import (
     "fmt"
     "os"
+    "log"
 
     "github.com/marcometodo/grpc-ecom-microservices/product-service/pkg/pb"
     "google.golang.org/grpc"
